@@ -21,7 +21,7 @@ st.divider()
 
 @st.cache_resource
 def load_model():
-    return YOLO("yolo11n.pt")
+    return YOLO("yolo11s.pt")
 
 model = load_model()
 
@@ -47,7 +47,7 @@ if uploaded_files:
         results = model.predict(
             source=image,
             classes=[0],
-            conf=0.35,
+            conf=0.50,
             verbose=False
         )
 
